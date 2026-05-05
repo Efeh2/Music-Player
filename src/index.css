@@ -20,6 +20,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 .app {
@@ -250,6 +255,7 @@ body {
   outline: none;
   cursor: pointer;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .volume-bar::-webkit-slider-thumb {
@@ -820,4 +826,258 @@ body {
 
 .close-btn:hover {
   background: rgba(255, 107, 107, 0.3);
+}
+
+/* ===== Compact + Responsive overrides ===== */
+
+.app {
+  max-width: 1080px;
+  padding: 1.25rem;
+}
+
+.app-main {
+  gap: 1.25rem;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
+}
+
+.music-player,
+.content-section,
+.playlist {
+  border-radius: 14px;
+  padding: 1rem;
+  max-height: 520px;
+}
+
+.track-info {
+  margin-bottom: 1rem;
+}
+
+.track-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.track-artist {
+  font-size: 0.85rem;
+}
+
+.progress-container {
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.time {
+  font-size: 0.78rem;
+  min-width: 2.4rem;
+}
+
+.progress-bar {
+  height: 4px;
+}
+
+.progress-bar::-webkit-slider-track,
+.progress-bar::-moz-range-track {
+  height: 4px;
+}
+
+.progress-bar::-webkit-slider-thumb,
+.progress-bar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+}
+
+.all-songs h2,
+.playlist h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.9rem;
+}
+
+.songs-grid {
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.65rem;
+}
+
+.song-card {
+  padding: 0.65rem 0.7rem;
+  border-radius: 10px;
+  min-height: 64px;
+}
+
+.song-title {
+  font-size: 0.92rem;
+  margin-bottom: 0.15rem;
+}
+
+.song-artist {
+  font-size: 0.78rem;
+  margin-left: 0;
+}
+
+.song-duration {
+  font-size: 0.74rem;
+}
+
+.play-button {
+  font-size: 1rem;
+  margin-left: 0.6rem;
+}
+
+.playlist-track {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+}
+
+.track-number {
+  width: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.track-details {
+  margin-left: 0.6rem;
+}
+
+.track-name {
+  font-size: 0.9rem;
+}
+
+.track-duration {
+  font-size: 0.78rem;
+}
+
+@media (max-width: 992px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .app-main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .music-player,
+  .content-section,
+  .playlist {
+    max-height: unset;
+  }
+
+  .songs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .app-main {
+    justify-items: center;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .app-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .app-header p {
+    font-size: 0.9rem;
+  }
+
+  .music-player,
+  .content-section,
+  .playlist {
+    padding: 0.85rem;
+    border-radius: 12px;
+    width: min(100%, 270px);
+    margin-inline: auto;
+  }
+
+  .music-player,
+  .content-section {
+    max-width: 270px;
+  }
+
+  .all-songs {
+    width: min(100%, 270px);
+    max-width: 270px;
+    margin-inline: auto;
+  }
+
+  .songs-grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 270px);
+    max-width: 270px;
+    gap: 0.4rem;
+    margin-inline: auto;
+  }
+
+  .song-card {
+    padding: 0.48rem 0.52rem;
+    width: 100%;
+    max-width: 100%;
+    min-height: 56px;
+    margin-inline: auto;
+  }
+
+  .song-title {
+    font-size: 0.86rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .song-artist {
+    font-size: 0.74rem;
+  }
+
+  .song-duration {
+    font-size: 0.7rem;
+  }
+
+  .track-title {
+    font-size: 0.98rem;
+  }
+
+  .track-artist {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .music-player,
+  .content-section {
+    width: min(100%, 240px);
+    max-width: 240px;
+  }
+
+  .playlist,
+  .all-songs,
+  .songs-grid {
+    width: min(100%, 240px);
+    max-width: 240px;
+  }
+
+  .song-card {
+    max-width: 100%;
+    padding: 0.42rem 0.46rem;
+    min-height: 52px;
+  }
+
+  .time {
+    display: none;
+  }
+
+  .song-title,
+  .track-name {
+    font-size: 0.8rem;
+  }
+
+  .song-artist,
+  .track-artist,
+  .track-duration,
+  .song-duration {
+    font-size: 0.72rem;
+  }
 }

@@ -19,7 +19,7 @@ export const AllSongs = () => {
                             <span className="song-duration">{song.duration}</span>
                         </div>
                         <div className="play-button">
-                            {currentTrackIndex === key ? "🎶" : "▶️"}
+                            {currentTrackIndex === key ? "♪" : "▶"}
                         </div>
                     </div>
                 ))}

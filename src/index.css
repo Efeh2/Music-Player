@@ -1095,6 +1095,10 @@ html {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --mobile-panel-width: 270px;
+  }
+
   .app {
     padding: 0.75rem;
     width: 100%;
@@ -1121,25 +1125,25 @@ html {
   .playlist {
     padding: 0.85rem;
     border-radius: 12px;
-    width: min(100%, 270px);
+    width: min(100%, var(--mobile-panel-width));
     margin-inline: auto;
   }
 
   .music-player,
   .content-section {
-    max-width: 270px;
+    max-width: var(--mobile-panel-width);
   }
 
   .all-songs {
-    width: min(100%, 270px);
-    max-width: 270px;
+    width: min(100%, var(--mobile-panel-width));
+    max-width: var(--mobile-panel-width);
     margin-inline: auto;
   }
 
   .songs-grid {
     grid-template-columns: 1fr;
-    width: min(100%, 270px);
-    max-width: 270px;
+    width: min(100%, var(--mobile-panel-width));
+    max-width: var(--mobile-panel-width);
     gap: 0.4rem;
     margin-inline: auto;
   }
@@ -1174,6 +1178,9 @@ html {
   }
 
   .navbar {
+    width: min(100%, var(--mobile-panel-width));
+    max-width: var(--mobile-panel-width);
+    margin-inline: auto;
     padding: 0.75rem 0.85rem;
     border-radius: 12px;
     gap: 0.55rem;
@@ -1202,13 +1209,14 @@ html {
   .theme-toggle-btn {
     width: 100%;
     margin-top: 0.1rem;
-    height: 2.1rem;
-    font-size: 0.95rem;
+    height: 1.9rem;
+    font-size: 0.78rem;
+    line-height: 1;
   }
 
   .playlists {
-    width: min(100%, 270px);
-    max-width: 270px;
+    width: min(100%, var(--mobile-panel-width));
+    max-width: var(--mobile-panel-width);
     margin-inline: auto;
   }
 
@@ -1299,17 +1307,21 @@ html {
 }
 
 @media (max-width: 380px) {
+  :root {
+    --mobile-panel-width: 240px;
+  }
+
   .music-player,
   .content-section {
-    width: min(100%, 240px);
-    max-width: 240px;
+    width: min(100%, var(--mobile-panel-width));
+    max-width: var(--mobile-panel-width);
   }
 
   .playlist,
   .all-songs,
   .songs-grid {
-    width: min(100%, 240px);
-    max-width: 240px;
+    width: min(100%, var(--mobile-panel-width));
+    max-width: var(--mobile-panel-width);
   }
 
   .song-card {
@@ -1336,8 +1348,8 @@ html {
 
   .playlists,
   .navbar {
-    width: min(100%, 240px);
-    max-width: 240px;
+    width: min(100%, var(--mobile-panel-width));
+    max-width: var(--mobile-panel-width);
     margin-inline: auto;
   }
 
@@ -1359,8 +1371,9 @@ html {
   }
 
   .theme-toggle-btn {
-    height: 2rem;
-    font-size: 0.88rem;
+    height: 1.8rem;
+    font-size: 0.72rem;
+    line-height: 1;
   }
 
   .playlist-input,

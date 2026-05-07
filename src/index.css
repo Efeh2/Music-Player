@@ -494,10 +494,14 @@ html {
   align-items: center;
   justify-content: center;
   padding: 0;
-  font-size: 1rem;
   line-height: 1;
   cursor: pointer;
   transition: all 0.25s ease;
+}
+
+.theme-toggle-icon {
+  font-size: 0.72rem;
+  line-height: 1;
 }
 
 .theme-toggle-btn:hover {
@@ -1096,7 +1100,7 @@ html {
 
 @media (max-width: 640px) {
   :root {
-    --mobile-panel-width: 270px;
+    --mobile-panel-width: 100%;
   }
 
   .app {
@@ -1112,6 +1116,10 @@ html {
     margin-inline: auto;
   }
 
+  .player-section {
+    width: 100%;
+  }
+
   .app-header h1 {
     font-size: 1.9rem;
   }
@@ -1125,25 +1133,25 @@ html {
   .playlist {
     padding: 0.85rem;
     border-radius: 12px;
-    width: min(100%, var(--mobile-panel-width));
+    width: 100%;
     margin-inline: auto;
   }
 
   .music-player,
   .content-section {
-    max-width: var(--mobile-panel-width);
+    max-width: none;
   }
 
   .all-songs {
-    width: min(100%, var(--mobile-panel-width));
-    max-width: var(--mobile-panel-width);
+    width: 100%;
+    max-width: 100%;
     margin-inline: auto;
   }
 
   .songs-grid {
     grid-template-columns: 1fr;
-    width: min(100%, var(--mobile-panel-width));
-    max-width: var(--mobile-panel-width);
+    width: 100%;
+    max-width: 100%;
     gap: 0.4rem;
     margin-inline: auto;
   }
@@ -1178,8 +1186,8 @@ html {
   }
 
   .navbar {
-    width: min(100%, var(--mobile-panel-width));
-    max-width: var(--mobile-panel-width);
+    width: 100%;
+    max-width: 100%;
     margin-inline: auto;
     padding: 0.75rem 0.85rem;
     border-radius: 12px;
@@ -1207,16 +1215,24 @@ html {
   }
 
   .theme-toggle-btn {
-    width: 100%;
+    width: 1.55rem;
     margin-top: 0.1rem;
-    height: 1.9rem;
-    font-size: 0.78rem;
+    height: 1.55rem;
+    padding: 0;
     line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  .theme-toggle-icon {
+    font-size: 0.62rem;
   }
 
   .playlists {
-    width: min(100%, var(--mobile-panel-width));
-    max-width: var(--mobile-panel-width);
+    width: 100%;
+    max-width: 100%;
     margin-inline: auto;
   }
 
@@ -1308,20 +1324,24 @@ html {
 
 @media (max-width: 380px) {
   :root {
-    --mobile-panel-width: 240px;
+    --mobile-panel-width: 100%;
   }
 
   .music-player,
   .content-section {
-    width: min(100%, var(--mobile-panel-width));
-    max-width: var(--mobile-panel-width);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .player-section {
+    width: 100%;
   }
 
   .playlist,
   .all-songs,
   .songs-grid {
-    width: min(100%, var(--mobile-panel-width));
-    max-width: var(--mobile-panel-width);
+    width: 100%;
+    max-width: 100%;
   }
 
   .song-card {
@@ -1348,8 +1368,8 @@ html {
 
   .playlists,
   .navbar {
-    width: min(100%, var(--mobile-panel-width));
-    max-width: var(--mobile-panel-width);
+    width: 100%;
+    max-width: 100%;
     margin-inline: auto;
   }
 
@@ -1371,9 +1391,14 @@ html {
   }
 
   .theme-toggle-btn {
-    height: 1.8rem;
-    font-size: 0.72rem;
+    width: 1.35rem;
+    height: 1.35rem;
+    padding: 0;
     line-height: 1;
+  }
+
+  .theme-toggle-icon {
+    font-size: 0.52rem;
   }
 
   .playlist-input,

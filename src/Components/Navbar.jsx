@@ -29,7 +29,9 @@ export const Navbar = ({ theme, onToggleTheme }) => {
                 aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
                 title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
-                {theme === "dark" ? "☀️" : "🌙"}
+                <span className="theme-toggle-icon" aria-hidden="true">
+                    {theme === "dark" ? "☀" : "☾"}
+                </span>
             </button>
         </div>
     </nav>

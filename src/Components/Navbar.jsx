@@ -9,7 +9,6 @@ export const Navbar = ({ theme, onToggleTheme }) => {
                 🎵 Music Player
             </Link>
         </div>
-
         <div className="navbar-links">
             <Link 
              to="/" 
